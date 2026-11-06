@@ -1,71 +1,58 @@
-  // ===== Task A: Greeting & Name Length =====
-const userName = prompt("Enter your name:");
-if (userName) {
-  console.log(`Hello, ${userName}! Your name has ${userName.length} letters.`);
+const username = prompt("Enter your name:");
+alert("Hello " + username);
+
+const celsius = Number(prompt("Enter a temperature in Celsius:"));
+const fahrenheit = (celsius * 9 / 5) + 32;
+alert(celsius + "°C = " + fahrenheit + "°F");
+
+const score = Number(prompt("Enter your score:"));
+let grade;
+if (score >= 90) {
+  grade = "A";
+} else if (score >= 75) {
+  grade = "B";
+} else if (score >= 60) {
+  grade = "C";
 } else {
-  console.log("No name entered.");
+  grade = "F";
 }
+alert("Your grade is " + grade);
 
-// ===== Task B: Temperature Conversion =====
-function celsiusToFahrenheit(c) {
-  return (c * 9 / 5) + 32;
-}
+const s1 = Number(prompt("Enter score 1:"));
+const s2 = Number(prompt("Enter score 2:"));
+const s3 = Number(prompt("Enter score 3:"));
+const s4 = Number(prompt("Enter score 4:"));
+const average = (s1 + s2 + s3 + s4) / 4;
+alert("Average: " + average);
 
-console.log("0°C =", celsiusToFahrenheit(0));     // 32
-console.log("25°C =", celsiusToFahrenheit(25));   // 77
-console.log("100°C =", celsiusToFahrenheit(100)); // 212
+const a = Number(prompt("Enter the first number:"));
+const b = Number(prompt("Enter the second number:"));
+const c = Number(prompt("Enter the third number:"));
+let max = a;
+if (b > max) max = b;
+if (c > max) max = c;
+alert("The largest number is " + max);
 
-// ===== Master Project: Grade & Average Calculator =====
-function getGrade(score) {
-  if (score >= 90) return "A";
-  if (score >= 75) return "B";
-  if (score >= 60) return "C";
-  return "F";
-}
-
-function calculateAverage(numbers) {
-  let total = 0;
-  for (const n of numbers) {
-    total += n;
-  }
-  return total / numbers.length;
-}
-
-const scores = [95, 72, 40, 88];
-for (const s of scores) {
-  console.log(`${s} -> ${getGrade(s)}`);
-}
-console.log("Average:", calculateAverage(scores));
-
-// ===== Task C: Largest Number (using if, not Math.max) =====
-function largest(a, b, c) {
-  let max = a;
-  if (b > max) max = b;
-  if (c > max) max = c;
-  return max;
-}
-
-console.log("Largest of 4, 9, 2:", largest(4, 9, 2)); // 9
-
-// ===== Task D: Multiples of 3 from 1 to 20 =====
+let multiples = "";
 let sum = 0;
 for (let i = 1; i <= 20; i++) {
   if (i % 3 === 0) {
-    console.log(i);
+    multiples += i + " ";
     sum += i;
   }
 }
-console.log("Sum of multiples of 3:", sum); // 63
+alert("Multiples of 3: " + multiples + "\nSum: " + sum);
 
-// ===== Bonus: FizzBuzz from 1 to 30 =====
+let fizzbuzz = "";
 for (let i = 1; i <= 30; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
-    console.log("FizzBuzz");
+    fizzbuzz += "FizzBuzz ";
   } else if (i % 3 === 0) {
-    console.log("Fizz");
+    fizzbuzz += "Fizz ";
   } else if (i % 5 === 0) {
-    console.log("Buzz");
+    fizzbuzz += "Buzz ";
   } else {
-    console.log(i);
+    fizzbuzz += i + " ";
   }
 }
+alert(fizzbuzz);
